@@ -1,0 +1,30 @@
+name: Atualizar JSON da Lotofácil
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # Executa todo dia às 2h da manhã (UTC)
+  workflow_dispatch:     # Permite rodar manualmente pelo GitHub
+
+jobs:
+  atualizar-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositório
+        uses: actions/checkout@v3
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Executar script de atualização
+        run: node atualizar.mjs
+
+      - name: Commit e push do novo JSON
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add lotofacil_combinacoes_convertido.json
+          git commit -m "Atualiza JSON automático"
+          git push

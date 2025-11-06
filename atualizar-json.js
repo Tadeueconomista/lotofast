@@ -60,4 +60,4 @@ async function atualizarJSON() {
   }
 }
 
-atualizarJSON();
+atualizarJSON();"// trigger redeploy" 

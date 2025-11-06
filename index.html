@@ -10,9 +10,91 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
 
+
+	
+	
   <style>
+ 
+#tituloPrincipal {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 30px;
+  color: #fff;
+  background: linear-gradient(90deg, #ff00cc, #00ffff, #ffcc00, #ff00cc);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neonColor 6s ease infinite;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff00cc, 0 0 15px #00ffff, 0 0 20px #ffcc00;
+}
+
+@keyframes neonColor {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.painel-logico {
+  background: #0d0d0d;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 213, 0.15);
+  text-align: center;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  color: #f5f5f5;
+  margin-bottom: 30px;
+  border: 1px solid #1a1a1a;
+}
+
+#tituloPrincipal {
+  font-size: 44px;
+  margin-bottom: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #00ffe0;
+  text-shadow: 0 0 4px #00ffe0, 0 0 10px #00ffe0;
+}
+
+.neon {
+  color: #00ffe0;
+  text-shadow: 0 0 6px #00ffe0, 0 0 12px #00ffe0;
+}
+
+#subtituloPrincipal {
+  font-size: 20px;
+  color: #cccccc;
+  margin-top: 10px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.destaque {
+  color: #ffd700;
+  font-weight: bold;
+  text-shadow: 0 0 4px #ffd700;
+}
+  
+
+  #subtituloPrincipal {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    text-shadow: 0 0 3px #00ffff;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  body {
+    background-color: #111; /* fundo escuro para destacar o neon */
+  }
+
+  
+  
+  
     * { box-sizing: border-box; }
     html, body {
       margin: 0;
@@ -23,49 +105,12 @@
       text-align: center;
       overflow-x: hidden;
     }
-
-    body {
-      background-color: #0a0a0a;
-    }
-
-    #tituloPrincipal {
-      font-size: 44px;
-      margin-top: 30px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: #00ffe0;
-      text-shadow: 0 0 4px #00ffe0, 0 0 10px #00ffe0;
-      background: linear-gradient(90deg, #ff00cc, #00ffff, #ffcc00, #ff00cc);
-      background-size: 400% 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: neonColor 6s ease infinite;
-    }
-
-    @keyframes neonColor {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    #subtituloPrincipal {
-      font-size: 18px;
-      color: #ffffff;
-      text-shadow: 0 0 3px #00ffff;
-      margin-bottom: 20px;
-    }
-
-    .destaque-ouro {
-      color: #ffd700;
-      font-weight: bold;
-      text-shadow: 0 0 4px #ffd700;
-    }
-
+    h1 { font-size: 20px; margin-bottom: 16px; color: #00ffd5; }
     #splash {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: #000;
+      background-color: #121212;
       color: #00ffd5;
       display: flex;
       flex-direction: column;
@@ -73,160 +118,75 @@
       align-items: center;
       z-index: 9999;
       font-size: 24px;
-      text-shadow: 0 0 8px #00ffd5;
     }
-
-    #cadastro {
-      display: none;
-      background-color: #000;
-      color: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #00ffd5;
-      max-width: 420px;
-      margin: 40px auto;
-      text-align: center;
-    }
-
     #cadastro input {
-      width: 80%;
-      max-width: 300px;
-      padding: 12px;
-      font-size: 18px;
-      border-radius: 6px;
-      border: 1px solid #00ffd5;
-      background-color: #1a1a1a;
-      color: #fff;
-      box-shadow: 0 0 6px #00ffd5;
-      margin-bottom: 16px;
+      width: 80%; max-width: 300px;
+      padding: 12px; font-size: 18px;
+      border-radius: 6px; border: 1px solid #00ffd5;
+      background-color: #303030; color: #fff;
+      box-shadow: 0 0 4px #00ffd5;
     }
-
-    #obsSenha {
-      color: #ccc;
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-
-    #pagamento {
-      display: none;
-      background-color: #000;
-      color: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #00ffd5;
-      max-width: 420px;
-      margin: 40px auto;
-      text-align: center;
-    }
-
-    #mensagemPix {
-      color: #00ff88;
-      font-weight: bold;
-      margin-top: 12px;
-    }
-
-    button {
-  background-color: rgba(0, 255, 213, 0.1);
-  color: #00ffd5;
-  border: 1px solid #00ffd5;
-  padding: 14px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  margin: 5px;
-  flex: 1 1 calc(50% - 10px); /* ✅ 2 botões por linha */
-  max-width: 280px;
-  box-shadow: 0 0 12px #00ffd5;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: transform 0.2s ease;
-  box-sizing: border-box;
-}
-
-    button:hover {
-      background-color: rgba(0, 255, 213, 0.2);
-      box-shadow: 0 0 20px #00ffd5;
-      transform: scale(1.05);
-    }
-
     #conteudo-principal {
       display: none;
       animation: fadeInMain 1s ease forwards;
-      max-width: 100%;
-      padding: 10px;
+      max-width: 100%; padding: 10px;
     }
-
     @keyframes fadeInMain {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
     }
-
     #entradaTopo {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 10px;
       margin: 20px auto;
-      width: 100%;
-      max-width: 600px;
+      width: 100%; max-width: 600px;
       padding: 10px;
     }
-
     #entradaTopo input {
-      width: 100%;
-      height: 56px;
-      font-size: 20px;
-      font-weight: bold;
+      width: 100%; height: 56px;
+      font-size: 20px; font-weight: bold;
       border-radius: 6px;
-      background-color: #303030;
-      color: #fff;
+      background-color: #303030; color: #fff;
       box-shadow: 0 0 4px #00ffd5;
       border: 1px solid #00ffd5;
       text-align: center;
     }
-	.painel-botoes,
-.grupo-controle {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-}
-
-.painel-botoes button,
-.grupo-controle button {
-  flex: 1 1 calc(50% - 10px); /* 2 por linha */
-  max-width: 280px;
-  min-width: 140px;
-  box-sizing: border-box;
-  background-color: rgba(0, 255, 213, 0.1);
-  color: #00ffd5;
-  border: 1px solid #00ffd5;
-  padding: 14px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 0 12px #00ffd5;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: transform 0.2s ease;
-}
-
-.painel-botoes button:hover,
-.grupo-controle button:hover {
-  background-color: rgba(0, 255, 213, 0.2);
-  box-shadow: 0 0 20px #00ffd5;
-  transform: scale(1.05);
-}
-
-@media (max-width: 480px) {
-  .painel-botoes button,
-  .grupo-controle button {
-    flex: 1 1 100%; /* 1 por linha em telas pequenas */
-  }
-}
-	
+    button {
+      background-color: rgba(0, 255, 213, 0.1);
+      color: #00ffd5;
+      border: 1px solid #00ffd5;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 5px;
+      width: 100%; max-width: 280px;
+      box-shadow: 0 0 12px #00ffd5;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    button:hover {
+      background-color: rgba(0, 255, 213, 0.2);
+      box-shadow: 0 0 20px #00ffd5;
+      transform: scale(1.05);
+    }
+    .painel-botoes, .grupo-controle {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 20px auto;
+      width: 100%; max-width: 600px;
+      padding: 0 10px;
+    }
+    @media (max-width: 480px) {
+      h1 { font-size: 18px; }
+      #entradaTopo {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; padding: 10px;
+      }
+    }
   </style>
 </head>
 
@@ -240,124 +200,162 @@
     <h2>Cadastro Rápido</h2>
     <input type="text" placeholder="Nome completo" id="nome" /><br><br>
     <input type="text" placeholder="CPF" id="cpf" /><br><br>
-    <p id="obsSenha">
-      🔒 A senha deve ter no mínimo 8 caracteres, começando com 3 letras seguidas de números e pelo menos uma letra maiúscula.
-    </p>
-    <input type="password" placeholder="Senha" id="senha" /><br><br>
+    <p id="obsSenha" style="color: #555; font-size: 14px;">
+  🔒 A senha deve ter no mínimo 8 caracteres, começando com 3 letras seguidas de números e pelo menos uma letra maiúscula.
+</p>
+
+	
+	<input type="password" placeholder="Senha" id="senha" /><br><br>
     <button onclick="finalizarCadastro()">Continuar</button>
   </div>
 
   <div id="pagamento" style="display: none;">
-    <h2>Pagar Pix R$ 9,80</h2>
-    <button onclick="copiarPix()">💸 Copiar Pix</button>
-    <p id="mensagemPix"></p>
-  </div>
+  <h2>Pagar Pix R$ 9,80</h2>
+  <button onclick="copiarPix()">💸 Copiar Pix</button>
+  <p id="mensagemPix" style="color: green; font-weight: bold;"></p>
+</div>
+  
+ <div id="infoConcurso" style="margin-bottom: 10px; font-weight: bold; font-size: 16px;"></div>
 
-  <div id="infoConcurso" style="margin-bottom: 10px; font-weight: bold; font-size: 16px;"></div>
+<div id="conteudo-principal" class="painel-ouro">
+  <h1 id="tituloPrincipal">⚡ <span class="neon-ouro">SORTEIO LÓGICO</span></h1>
+  <p id="subtituloPrincipal">Sua <span class="destaque-ouro">"SORTE"</span> pode ser associada à <span class="destaque-ouro">lógica</span>!</p>
 
-  <div id="conteudo-principal" class="painel-ouro">
-    <h1 id="tituloPrincipal">⚡ <span class="neon-ouro">SORTEIO LÓGICO</span></h1>
-    <p id="subtituloPrincipal">Sua <span class="destaque-ouro">"SORTE"</span> pode ser associada à <span class="destaque-ouro">lógica</span>!</p>
+
+
+
+
 
     <h1>Digite até 15 números de 1 a 25</h1>
     <div id="entradaTopo">
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-    </div>
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+  <input type="text" />
+</div>
+
 	
+	
+	
+
     <div class="painel-botoes">
-  <button>📥 Importar Último Concurso</button>
-  <button>🔍 Buscar Concursos</button>
-  <button>🧪 Jogos Inversos à Lógica</button>
-  <button>🏆 Ganhador estilo Bitcoin</button>
-  <button>🔄 Novo sorteio</button>
-  <button>🧠 Avaliar Py</button>
-</div>
+      <button onclick="importarUltimos()">📥 Importar Último Concurso</button>
+      <button onclick="buscarConcursoEspecifico()">🔍 Buscar Concursos</button>
+      <button onclick="jogosInversosALogica()">🧪 Jogos Inversos à Lógica</button>
+      <button onclick="sorteioBitcoin()">🏆 Ganhador estilo Bitcoin</button>
+      <button onclick="limparTudo()">🔄 Novo sorteio</button>
+      <button onclick="avaliarConjuntoPython()">🧠 Avaliar Py</button>
+    </div>
 
-<div class="grupo-controle">
-  <button>🔄 Ganhador da Bitcoin</button>
-  <button>📊 Ver trios mais comuns</button>
-  <button>🎯 Jogos Promissores</button>
-  <button>📈 Estratégias Otimizadas</button>
-  <button>📊 Probabilidade Histórica</button>
-  <button>🎯 Sortear com Lógica</button>
-</div>
+    <div class="grupo-controle">
+      <button onclick="logicaGanhadorBitcoin()">🔄 Ganhador da Bitcoin</button>
+      <button onclick="verTriosMaisComuns()">📊 Ver trios mais comuns</button>
+      <button onclick="prepararPromissor()">🎯 Jogos Promissores</button>
+      <button onclick="gerarJogosPromissores(10)">📈 Estratégias Otimizadas</button>
+      <button onclick="sortearComFrequencia()">📊 Probabilidade Histórica</button>
+      <button id="btnSortear">🎯 Sortear com Lógica</button>
+    </div>
 
-    <div id="resultadoBitcoin"></div>
+    <div id="resultadoBitcoin" style="margin-top: 10px;"></div>
     <div id="statusImportacao"></div>
     <div id="jogosGerados"></div>
     <div id="analiseEstatistica"></div>
     <div id="listaConcursos"></div>
     <div id="ultimoConcursoTopo"></div>
     <div id="jogosInversosContainer"></div>
-    <div id="jogosIneditosContainer">
+    <div id="jogosIneditosContainer" style="margin-top: 30px;">
       <h3 style="color: #00ff88;">🟢 Jogos 100% Inéditos</h3>
     </div>
     <div class="resultado" id="resultado"></div>
     <pre id="output"></pre>
   </div>
 
- <script>
-  window.onload = function () {
-    const splash = document.getElementById("splash");
-    const cadastro = document.getElementById("cadastro");
-    const pagamento = document.getElementById("pagamento");
-    const principal = document.getElementById("conteudo-principal");
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("splash").style.display = "none";
+               document.getElementById("cadastro").style.display = "block";
+      }, 2500); // 2.5 segundos
+    });
 
-    // Etapa 1: mostrar splash
-    splash.style.display = "flex";
+    function finalizarCadastro() {
+  const nome = document.getElementById("nome").value.trim();
+  const cpf = document.getElementById("cpf").value.trim();
+  const senha = document.getElementById("senha").value;
 
-    // Etapa 2: após 3 segundos, mostrar cadastro
-    setTimeout(() => {
-      splash.style.display = "none";
-      cadastro.style.display = "block";
-    }, 3000);
-  };
-
-  // Etapa 3: ao finalizar cadastro, mostrar pagamento
-  function finalizarCadastro() {
-    document.getElementById("cadastro").style.display = "none";
-    document.getElementById("pagamento").style.display = "block";
+  if (!nome || !cpf || !senha) {
+    alert("Preencha todos os campos.");
+    return;
   }
 
-  // Etapa 4: ao copiar Pix, mostrar tela principal
-  function copiarPix() {
-    navigator.clipboard.writeText("chavepix@exemplo.com");
-    document.getElementById("mensagemPix").innerText = "Pix copiado com sucesso!";
-
-    setTimeout(() => {
-      document.getElementById("pagamento").style.display = "none";
-      document.getElementById("conteudo-principal").style.display = "block";
-    }, 2000);
+  if (!validarSenha(senha)) {
+    alert("⚠️ Senha inválida.\nEla deve ter no mínimo 8 caracteres, começar com 3 letras seguidas de números e conter pelo menos uma letra maiúscula.");
+    return;
   }
 
-  // Etapa 5: pressionar Enter na senha ativa o botão
-  document.addEventListener("DOMContentLoaded", () => {
-    const senhaInput = document.getElementById("senha");
-    if (senhaInput) {
-      senhaInput.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-          finalizarCadastro();
-        }
-      });
-    }
-  });
+  // Exibe a área de pagamento e o botão Pix
+  document.getElementById("cadastro").style.display = "none";
+  document.getElementById("pagamento").style.display = "block";
+  document.getElementById("botaoPix").style.display = "block";
+}
+function validarSenha(senha) {
+  if (senha.length < 8) return false;
 
+  const letrasIniciais = senha.slice(0, 3);
+  if (!/^[a-zA-Z]{3}$/.test(letrasIniciais)) return false;
+
+  const resto = senha.slice(3);
+  if (!/\d/.test(resto)) return false;
+
+  if (!/[A-Z]/.test(senha)) return false;
+
+  return true;
+}
+
+function mostrarPix() {
+  document.getElementById("pixInfo").style.display = "block";
+  
+  document.getElementById("pagamento").style.display = "none";
+  document.getElementById("conteudo-principal").style.display = "block";
+}
+
+function copiarPix() {
+  const chavePix = "19997161717";
+
+  // Copia a chave Pix
+  const tempInput = document.createElement("input");
+  tempInput.value = chavePix;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+
+  // Mostra mensagem de sucesso
+  const mensagem = document.getElementById("mensagemPix");
+  mensagem.textContent = "✅ Pix copiado com sucesso!";
+
+  // Vai para a tela principal
+  document.getElementById("pagamento").style.display = "none";
+  document.getElementById("conteudo-principal").style.display = "block";
+}
+
+
+
+  </script>
   
   
+  <script>
   document.addEventListener("DOMContentLoaded", function () {
     const cpfInput = document.getElementById("cpf");
 
@@ -381,28 +379,7 @@
   });
 </script>
   
- <script>
-  fetch('lotofacil_combinacoes_convertido.json')
-    .then(res => res.json())
-    .then(data => {
-      const lista = document.getElementById('listaConcursos');
-      lista.innerHTML = '<h3 style="color:#ffd700;">📊 Concursos Recentes</h3>';
-
-      const concursosOrdenados = Object.keys(data).sort((a, b) => b - a);
-      concursosOrdenados.slice(0, 10).forEach(concurso => {
-        const dezenas = data[concurso].join(', ');
-        const bloco = document.createElement('p');
-        bloco.innerHTML = `<strong>Concurso ${concurso}:</strong> ${dezenas}`;
-        lista.appendChild(bloco);
-      });
-    })
-    .catch(err => {
-      console.error('Erro ao carregar JSON:', err);
-      const lista = document.getElementById('listaConcursos');
-      lista.innerHTML = '<p style="color:red;">Erro ao carregar os concursos.</p>';
-    });
-</script>
- <script src="atualizar.js"></script>
+  
 </body>
 
 
@@ -1984,43 +1961,53 @@ async function importarUltimos() {
   let ultimaChave = null;
   let dezenas = null;
 
-  // 1️⃣ Tenta buscar o concurso mais recente pela API externa
+  let concursos = {};
+
+  // 1️⃣ Busca no JSON local gerado pelo script atualizar.mjs
   try {
-    const resApi = await fetch("https://api.guidi.dev.br/loteria/lotofacil", { cache: "no-store" });
+    const resJson = await fetch("lotofacil_combinacoes_convertido.json", { cache: "no-store" });
+    concursos = await resJson.json();
+  } catch (e) {
+    console.warn("❌ Erro ao buscar do JSON local:", e);
+  }
+
+  // 2️⃣ Encontra o maior número de concurso no JSON
+  const chaves = Object.keys(concursos).map(Number).sort((a, b) => b - a);
+  const maiorLocal = chaves[0];
+
+  // 3️⃣ Verifica se há concurso mais recente na API externa
+  let maiorApi = maiorLocal;
+  try {
+    const resApi = await fetch("https://api.guidi.dev.br/loteria/lotofacil");
     const dadosApi = await resApi.json();
-
-    if (dadosApi?.concurso) {
-      ultimaChave = parseInt(dadosApi.concurso);
-
-      const resDetalhes = await fetch(`https://api.guidi.dev.br/loteria/lotofacil/${ultimaChave}`, { cache: "no-store" });
-      const dadosDetalhes = await resDetalhes.json();
-
-      if (Array.isArray(dadosDetalhes.dezenas) && dadosDetalhes.dezenas.length === 15) {
-        dezenas = dadosDetalhes.dezenas;
-        console.log(`✅ API retornou concurso ${ultimaChave}`);
-      }
+    if (dadosApi?.concurso && parseInt(dadosApi.concurso) > maiorLocal) {
+      maiorApi = parseInt(dadosApi.concurso);
+      console.log(`🆕 API indica concurso mais recente: ${maiorApi}`);
     }
   } catch (e) {
-    console.warn("❌ Erro ao buscar dados da API externa:", e);
+    console.warn("❌ Erro ao verificar último concurso na API externa:", e);
   }
 
-  // 2️⃣ Se API falhar ou não retornar dezenas, tenta buscar no JSON local
-  if (!dezenas) {
+  ultimaChave = maiorApi;
+
+  // 4️⃣ Tenta buscar as dezenas do concurso mais recente
+  if (concursos[String(ultimaChave)]) {
+    dezenas = concursos[String(ultimaChave)];
+    console.log(`✅ JSON local respondeu com o concurso ${ultimaChave}`);
+  } else {
     try {
-      const resJson = await fetch("lotofacil_combinacoes_convertido.json", { cache: "no-store" });
-      const concursos = await resJson.json();
-
-      const chaves = Object.keys(concursos).map(Number).sort((a, b) => b - a);
-      ultimaChave = chaves[0];
-      dezenas = concursos[String(ultimaChave)];
-
-      console.log(`🟡 Usando JSON local para o concurso ${ultimaChave}`);
+      const resApi = await fetch(`https://api.guidi.dev.br/loteria/lotofacil/${ultimaChave}`);
+      const dadosApi = await resApi.json();
+      if (Array.isArray(dadosApi.dezenas) && dadosApi.dezenas.length === 15) {
+        dezenas = dadosApi.dezenas;
+        console.log(`✅ API externa respondeu com o concurso ${ultimaChave}`);
+      }
     } catch (e) {
-      console.warn("❌ Erro ao buscar do JSON local:", e);
+      console.warn("❌ Erro ao buscar concurso na API externa:", e);
     }
   }
 
-  // 3️⃣ Validação e normalização
+  // 5️⃣ Validação e normalização
   const dezenasNumeros = Array.isArray(dezenas)
     ? dezenas.map(n => parseInt(n)).filter(n => !isNaN(n))
     : [];
@@ -2031,7 +2018,7 @@ async function importarUltimos() {
     return alert("⚠️ Não foi possível carregar o último concurso.");
   }
 
-  // 4️⃣ Preenche os inputs visuais
+  // 6️⃣ Preenche os inputs visuais
   const formatadas = dezenasNumeros.map(n => String(n).padStart(2, '0'));
   formatadas.forEach((num, i) => {
     if (inputsTopo[i]) {
@@ -2046,7 +2033,7 @@ async function importarUltimos() {
     }
   });
 
-  // 5️⃣ Atualiza visual do concurso
+  // 7️⃣ Atualiza visual do concurso
   infoConcurso.textContent = `Concurso nº ${ultimaChave}`;
   Object.assign(infoConcurso.style, {
     position: 'absolute',
@@ -2057,13 +2044,12 @@ async function importarUltimos() {
     color: '#333'
   });
 
-  // 6️⃣ Atualiza variável global
+  // 8️⃣ Atualiza variável global
   window.jogoFixo = dezenasNumeros;
 
-  // 7️⃣ Alerta de sucesso
+  // 9️⃣ Alerta de sucesso
   alert(`✅ Último concurso ${ultimaChave} carregado:\n${formatadas.join(" - ")}`);
 }
-
 
 async function sorteioBitcoin() {
   const entradaTopo = document.querySelectorAll('#entradaTopo input');

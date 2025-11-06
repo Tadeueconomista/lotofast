@@ -1960,19 +1960,26 @@ async function importarUltimos() {
 
   let ultimaChave = null;
   let dezenas = null;
-
   let concursos = {};
 
-  // 1️⃣ Busca no JSON local gerado pelo script atualizar.mjs
+  // 1️⃣ Busca no JSON local
   try {
     const resJson = await fetch("lotofacil_combinacoes_convertido.json", { cache: "no-store" });
+    if (!resJson.ok) throw new Error(`Status ${resJson.status}`);
     concursos = await resJson.json();
   } catch (e) {
     console.warn("❌ Erro ao buscar do JSON local:", e);
+    infoConcurso.textContent = "❌ Erro ao carregar o JSON local.";
+    infoConcurso.style.color = "red";
   }
 
-  // 2️⃣ Encontra o maior número de concurso no JSON
+  // 2️⃣ Encontra o maior número de concurso
   const chaves = Object.keys(concursos).map(Number).sort((a, b) => b - a);
+  if (chaves.length === 0) {
+    infoConcurso.textContent = "❌ Nenhum concurso encontrado no JSON.";
+    infoConcurso.style.color = "red";
+    return alert("⚠️ O arquivo local está vazio ou ausente.");
+  }
   const maiorLocal = chaves[0];
 
   // 3️⃣ Verifica se há concurso mais recente na API externa
@@ -1980,8 +1987,9 @@ async function importarUltimos() {
   try {
     const resApi = await fetch("https://api.guidi.dev.br/loteria/lotofacil");
     const dadosApi = await resApi.json();
-    if (dadosApi?.concurso && parseInt(dadosApi.concurso) > maiorLocal) {
-      maiorApi = parseInt(dadosApi.concurso);
+    const concursoApi = parseInt(dadosApi?.concurso);
+    if (concursoApi > maiorLocal) {
+      maiorApi = concursoApi;
       console.log(`🆕 API indica concurso mais recente: ${maiorApi}`);
     }
   } catch (e) {
@@ -1990,11 +1998,10 @@ async function importarUltimos() {
 
   ultimaChave = maiorApi;
 
-  // 4️⃣ Tenta buscar as dezenas do concurso mais recente
-  if (concursos[String(ultimaChave)]) {
-    dezenas = concursos[String(ultimaChave)];
-    console.log(`✅ JSON local respondeu com o concurso ${ultimaChave}`);
-  } else {
+  // 4️⃣ Tenta buscar as dezenas
+  dezenas = concursos[String(ultimaChave)] || null;
+
+  if (!dezenas) {
     try {
       const resApi = await fetch(`https://api.guidi.dev.br/loteria/lotofacil/${ultimaChave}`);
       const dadosApi = await resApi.json();
@@ -2007,7 +2014,7 @@ async function importarUltimos() {
     }
   }
 
-  // 5️⃣ Validação e normalização
+  // 5️⃣ Validação
   const dezenasNumeros = Array.isArray(dezenas)
     ? dezenas.map(n => parseInt(n)).filter(n => !isNaN(n))
     : [];
@@ -2018,7 +2025,7 @@ async function importarUltimos() {
     return alert("⚠️ Não foi possível carregar o último concurso.");
   }
 
-  // 6️⃣ Preenche os inputs visuais
+  // 6️⃣ Preenche os inputs
   const formatadas = dezenasNumeros.map(n => String(n).padStart(2, '0'));
   formatadas.forEach((num, i) => {
     if (inputsTopo[i]) {
@@ -2033,7 +2040,7 @@ async function importarUltimos() {
     }
   });
 
-  // 7️⃣ Atualiza visual do concurso
+  // 7️⃣ Atualiza visual
   infoConcurso.textContent = `Concurso nº ${ultimaChave}`;
   Object.assign(infoConcurso.style, {
     position: 'absolute',
@@ -2044,12 +2051,15 @@ async function importarUltimos() {
     color: '#333'
   });
 
-  // 8️⃣ Atualiza variável global
+  // 8️⃣ Variável global
   window.jogoFixo = dezenasNumeros;
 
   // 9️⃣ Alerta de sucesso
   alert(`✅ Último concurso ${ultimaChave} carregado:\n${formatadas.join(" - ")}`);
 }
+
+
+
 
 async function sorteioBitcoin() {
   const entradaTopo = document.querySelectorAll('#entradaTopo input');

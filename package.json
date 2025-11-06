@@ -1,0 +1,26 @@
+{
+  "name": "lotofast",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "atualizar-json.js",
+  "scripts": {
+    "start": "node atualizar-json.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tadeueconomista/lotofast.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tadeueconomista/lotofast/issues"
+  },
+  "homepage": "https://github.com/tadeueconomista/lotofast#readme",
+  "description": "",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {}
+}
